@@ -154,8 +154,8 @@ impl CreateOrder {
 
     /// Set the installed stars (for Ayatan sculptures).
     pub fn with_sculpture_stars(mut self, amber: u8, cyan: u8) -> Self {
-        self.amber_stars = Some(amber);
-        self.cyan_stars = Some(cyan);
+        if amber > 0 {self.amber_stars = Some(amber);}
+        if cyan > 0 {self.cyan_stars = Some(cyan);}
         self
     }
 
